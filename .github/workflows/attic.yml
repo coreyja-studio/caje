@@ -1,7 +1,7 @@
 name: attic
 
-# Build slow-server's image and push it to attic (coreyja-studio/infra's
-# reusable deploy workflow). Deploying is then pinning the printed digest in
+# Build slow-server's image and push it to attic (coreyja-studio/.github's
+# reusable attic-deploy workflow). Deploying is then pinning the printed digest in
 # coreyja-studio/infra hosts/attic/apps/slow-server/compose.yml. caje itself
 # stays on Fly.
 
@@ -12,7 +12,7 @@ on:
 
 jobs:
   slow-server:
-    uses: coreyja-studio/infra/.github/workflows/_attic-deploy.yml@main
+    uses: coreyja-studio/.github/.github/workflows/attic-deploy.yml@main
     with:
       app: slow-server
       dockerfile: slow_server.Dockerfile
